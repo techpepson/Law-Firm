@@ -18,8 +18,14 @@ import successionPlanning from "../images/succession.webp";
 import inheritance from "../images/inheritance.jpeg";
 import cityVid from "../images/law-city.mp4";
 import lawStatue from "../images/webP-law-toy.webp";
+import lawDocs from "../images/law-image.avif";
+import team from "../images/fortunaTeam.webp";
+import lawWeigh from "../images/lawBuild.jpeg";
 
 export {
+  lawWeigh,
+  team,
+  lawDocs,
   lawStatue,
   lawLogo,
   whatsapp,

@@ -14,3 +14,12 @@ export const footerStyles = {
   footerPositioning: `flex gap-5 justify-center items-center max-lg:flex-col`,
   footerGlobalContainer: `flex-col justify-between items-center`,
 };
+
+export const aboutPageStyles = {
+  containerStyles: ``,
+  textStyles: `text-md font-normal text-slate-300 text-justify`,
+  textImageStyles: `flex gap-5 max-2xl:flex-col items-center gap-5`,
+  textStylesVariant: `text-pretty`,
+  headingStyles: `text-orange-500`,
+  headingStylesVariant: `text-orange-700`,
+};
