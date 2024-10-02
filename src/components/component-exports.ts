@@ -2,5 +2,6 @@
 
 import Header from "./util/Header";
 import Footer from "./util/Footer";
+import Home from "./Home";
 
-export { Header, Footer };
+export { Header, Footer, Home };
