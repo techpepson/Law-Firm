@@ -43,7 +43,9 @@ const About: React.FC = () => {
       </Helmet>
 
       {/*header*/}
-      <Header />
+      <header>
+        <Header />
+      </header>
       {/* Page Content */}
       <div className="flex flex-col gap-5 bg-black bg-opacity-5 h-full">
         {/* Header Section */}
@@ -338,7 +340,9 @@ const About: React.FC = () => {
           </div>
         </Container>
       </div>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

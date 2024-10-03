@@ -1,0 +1,75 @@
+//data for the attorneys of Fortuna
+
+import {
+  fifthLawyer,
+  firstLawyer,
+  fourthLawyer,
+  secondLawyer,
+  thirdLawyer,
+} from "../assets/images";
+
+export const attorneyData = [
+  {
+    name: "Attorney Johnson",
+    image: firstLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875432",
+    practice: "will-drafting",
+    position: "Chief Attorney",
+    id: 1,
+  },
+  {
+    name: "Attorney Emmanuella",
+    image: secondLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875431",
+    practice: "estate-administration",
+    id: 2,
+    position: "Chief Attorney",
+  },
+  {
+    name: "Attorney Johnson",
+    image: thirdLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875432",
+    practice: "inheritance-disputes",
+    id: 3,
+    position: "Chief Attorney",
+  },
+  {
+    name: "Attorney Johnson",
+    image: fourthLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875434",
+    practice: "succession-planning",
+    id: 4,
+    position: "Chief Attorney",
+  },
+  {
+    name: "Attorney Joshua",
+    image: fourthLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875434",
+    practice: "succession-planning",
+    id: 4,
+    position: "Chief Attorney",
+  },
+  {
+    name: "Attorney Kingston",
+    image: fourthLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875434",
+    practice: "succession-planning",
+    id: 4,
+    position: "Chief Attorney",
+  },
+  {
+    name: "Attorney Johnson",
+    image: fifthLawyer,
+    email: "lawyer1@gmail.com",
+    phone: "0551875433",
+    practice: "trust-administration",
+    id: 5,
+    position: "Chief Attorney",
+  },
+];

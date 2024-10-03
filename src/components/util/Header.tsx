@@ -8,7 +8,7 @@ import { icons } from "../../assets/icons";
 import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
-  //use state definitons for toggling mobile views
+  //use state definitions for toggling mobile views
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   //toggle function for the mobile view
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
             </nav>
           ))}
           {/*hover card section*/}
-          <nav>
+          {/* <nav>
             <div>
               <HoverCard.Root>
                 <HoverCard.Trigger>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                 </HoverCard.Content>
               </HoverCard.Root>
             </div>
-          </nav>
+          </nav> */}
           {/*search icon*/}
           <button className="text-hoverColor-primary">
             {icons.searchIcon}
@@ -183,7 +183,7 @@ const Header: React.FC = () => {
                       </nav>
                     ))}
                     {/*hover card section*/}
-                    <nav>
+                    {/* <nav>
                       <div>
                         <HoverCard.Root>
                           <HoverCard.Trigger>
@@ -230,7 +230,7 @@ const Header: React.FC = () => {
                           </HoverCard.Content>
                         </HoverCard.Root>
                       </div>
-                    </nav>
+                    </nav> */}
                     {/*search icon*/}
                   </div>
                 </div>

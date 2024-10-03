@@ -23,3 +23,8 @@ export const aboutPageStyles = {
   headingStyles: `text-orange-500`,
   headingStylesVariant: `text-orange-700`,
 };
+
+export const selectStyles = {
+  selectContainer: `flex flex-col gap-8`,
+  mappedContent: `flex flex-col items-start`,
+};

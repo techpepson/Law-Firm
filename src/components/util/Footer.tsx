@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       <footer>
         {/*footer container*/}
         <div
-          className={`${footerStyles.footerPositioning} w-full absolute bottom-0 bg-gradient-to-r from-orange-200 to-slate-100`}
+          className={`${footerStyles.footerPositioning} w-full relative bottom-0 bg-gradient-to-r from-orange-200 to-slate-100`}
         >
           {footerData.map((footer) => (
             <ul>
