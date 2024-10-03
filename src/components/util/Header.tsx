@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { lawLogo } from "../../assets/images";
-import { hoverCardData, navData } from "../../data/navData";
-import { Button, HoverCard, Text, Tooltip } from "@radix-ui/themes";
+import { navData } from "../../data/navData";
+import { Button, Tooltip } from "@radix-ui/themes";
 import { headerStyles } from "../../styles/utilityStyles";
 import { Link } from "react-router-dom";
 import { icons } from "../../assets/icons";

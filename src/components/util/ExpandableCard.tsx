@@ -101,18 +101,6 @@ export function ExpandableCardDemo() {
                       {active.description}
                     </motion.p>
                   </div>
-
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                  >
-                    {active.ctaText}
-                  </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -133,7 +121,7 @@ export function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
