@@ -9,4 +9,5 @@ export const homePageStyles = {
   expertiseSection: `flex flex-col items-center`,
   expertiseText: `text-center `,
   headingVariant: `text-3xl text-slate-600 text-center items-center mb-5`,
+  imageContainerStyles: `absolute w-full -z-[999]`,
 };

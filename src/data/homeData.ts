@@ -1,12 +1,18 @@
 //data for the home page
 
 import {
+  estate,
   fifthLawyer,
   firstLawyer,
   fourthLawyer,
+  inheritance,
+  lawWeigh,
   secondLawyer,
   sixthLawyer,
+  successionPlanning,
   thirdLawyer,
+  trust,
+  will,
 } from "../assets/images";
 
 export const homeData = [
@@ -71,6 +77,84 @@ export const cards = [
   {
     title: "Attorney Franklina",
     src: sixthLawyer,
+    link: "",
+  },
+];
+
+//text content to display in the upper section of the home page
+
+export const homeTexts = [
+  {
+    heading: "Fortuna Legal Services in Danville, CA",
+    description:
+      "Fortuna represents trustees, beneficiaries and heirs in disputed estate and trust litigation. Our cases involve succession planning, trust administration, inheritance disputes, estate administration, orders and securities litigation. ",
+  },
+];
+
+export const sponsorData = [
+  {
+    image: lawWeigh,
+    description: "Dickson Company",
+  },
+  {
+    image: lawWeigh,
+    description: "Dickson Company",
+  },
+  {
+    image: lawWeigh,
+    description: "Dickson Company",
+    link: "",
+  },
+];
+
+export const servicesData = [
+  {
+    image: will,
+    title: "Will Drafting & Review",
+    link: "",
+  },
+  {
+    image: estate,
+    title: "Estate Administration",
+    link: "",
+  },
+  {
+    image: inheritance,
+    title: "Inheritance Disputes",
+    link: "",
+  },
+  {
+    image: successionPlanning,
+    title: "Succession Planning",
+    link: "",
+  },
+  {
+    image: trust,
+    title: "Trust Administration",
+    link: "",
+  },
+];
+
+export const staffData = [
+  {
+    name: "Loren Bar",
+    title: "Partner",
+    id: "loren-bar",
+    image: firstLawyer,
+    link: "",
+  },
+  {
+    name: "Graham D. Douds",
+    title: "Partner",
+    id: "graham-douds",
+    image: secondLawyer,
+    link: "",
+  },
+  {
+    name: "Nick Maxwell",
+    title: "Senior Counsel",
+    id: "nick-maxwell",
+    image: thirdLawyer,
     link: "",
   },
 ];

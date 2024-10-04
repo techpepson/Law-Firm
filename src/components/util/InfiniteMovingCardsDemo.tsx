@@ -2,10 +2,19 @@
 
 import { Heading } from "@radix-ui/themes";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
+import { icons } from "../../assets/icons";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden gap-5">
+      <Heading>Testimonials</Heading>
+      <div className="flex gap-3">
+        <Heading>{icons.star}</Heading>
+        <Heading>{icons.star}</Heading>
+        <Heading>{icons.star}</Heading>
+        <Heading>{icons.star}</Heading>
+        <Heading>{icons.star}</Heading>
+      </div>
       <Heading className="text-center items-center">
         WHAT OUR CLIENTS HAVE TO SAY
       </Heading>

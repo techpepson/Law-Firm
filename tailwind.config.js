@@ -12,6 +12,9 @@ module.exports = {
   theme: {
     // rest of the code
     extend: {
+      fontFamily: {
+        spicy: ['"Spicy Rice"', 'cursive']
+      },
       animation: {
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",

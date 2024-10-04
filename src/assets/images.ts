@@ -20,9 +20,18 @@ import cityVid from "../images/law-city.mp4";
 import lawStatue from "../images/webP-law-toy.webp";
 import lawDocs from "../images/law-image.avif";
 import team from "../images/fortunaTeam.webp";
-import lawWeigh from "../images/lawBuild.jpeg";
-
+import lawWeigh from "../images/law-weigh.avif";
+import lawRoom from "../images/lawRoom.jpeg";
+import legalMachine from "../images/webpLaw.webp";
+import lawHammer from "../images/law-hammer.webp";
+import whiteCity from "../images/whiteCity.webp";
+import lawyer from "../images/lawyer.webp";
 export {
+  lawyer,
+  whiteCity,
+  lawHammer,
+  legalMachine,
+  lawRoom,
   lawWeigh,
   team,
   lawDocs,

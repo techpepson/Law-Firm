@@ -1,0 +1,19 @@
+.elsie-swash-caps-regular {
+  font-family: "Elsie Swash Caps", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.elsie-swash-caps-black {
+  font-family: "Elsie Swash Caps", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.mid-section-styles {
+  background-image: url("./images//whiteCity.webp");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 32px;
+}
