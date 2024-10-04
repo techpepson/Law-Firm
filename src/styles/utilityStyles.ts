@@ -7,7 +7,7 @@ export const headerStyles = {
   hoverCardStyles: `flex flex-col gap-5`,
   minScreenStyles: `max-lg:flex hidden relative items-center`,
   minButtonStyles: `flex right-10 absolute top-10 gap-5`,
-  mobileViewPositioning: `flex flex-col right-0 relative`,
+  mobileViewPositioning: `flex flex-col relative`,
 };
 
 export const footerStyles = {

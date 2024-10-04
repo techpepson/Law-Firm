@@ -9,44 +9,35 @@ import {
 
 export const navData = [
   {
-    heading: "AWARDS & RECOGNITIONS",
-    title: "Get to know our recognitions",
-    link: "/awards",
+    trigger: "Probabate",
+    content: [
+      {
+        title: "Will Drafting & Review",
+        link: "",
+      },
+      {
+        title: "Succession Planning",
+        link: "",
+      },
+      {
+        title: "Inheritance Disputes",
+        link: "",
+      },
+    ],
   },
+
   {
-    heading: "THE FIRM",
-    title: "Get to know about Fortuna",
-    link: "/about",
-  },
-  {
-    heading: "PEOPLE",
-    title: "About our people",
-    link: "/people",
-  },
-  {
-    heading: "PRACTICES",
-    title: "Know more about our practices",
-    link: "/practices",
-  },
-  {
-    heading: "CULTURE",
-    title: "Our culture",
-    link: "/culture",
-  },
-  {
-    heading: "PRO BONO",
-    title: "Pro Bono services",
-    link: "/bono",
-  },
-  {
-    heading: "CAREERS",
-    title: "Available career chances",
-    link: "/careers",
-  },
-  {
-    heading: "INSIGHTS",
-    title: "Insights",
-    link: "/insights",
+    trigger: "Administration",
+    content: [
+      {
+        title: "Estate Administration",
+        link: "",
+      },
+      {
+        title: "Trust Administration",
+        link: "",
+      },
+    ],
   },
 ];
 

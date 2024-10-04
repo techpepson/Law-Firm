@@ -29,6 +29,7 @@ import { InfiniteMovingCardsDemo } from "./util/InfiniteMovingCardsDemo";
 import { homePageStyles } from "../styles/homePageStyles";
 import { icons } from "../assets/icons";
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
+import { Footer, Header } from "./component-exports";
 
 const Home: React.FC = () => {
   //number animation values
@@ -100,9 +101,12 @@ const Home: React.FC = () => {
       {/*container for the home page */}
       <div>
         {/*section for the home page upper section*/}
-        <section className="">
+        <section>
           {/*container for the upper section*/}
           <div className={`relative h-[42rem]`}>
+            <div className="absolute w-full">
+              <Header />
+            </div>
             {/*image to use for the background*/}
             <div className={`${homePageStyles.imageContainerStyles} h-full`}>
               <img
@@ -707,6 +711,7 @@ const Home: React.FC = () => {
           </div>
         </section>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { lawLogo } from "../../assets/images";
 import { navData } from "../../data/navData";
-import { Button, Tooltip } from "@radix-ui/themes";
+import { Button, HoverCard, Text } from "@radix-ui/themes";
 import { headerStyles } from "../../styles/utilityStyles";
 import { Link } from "react-router-dom";
 import { icons } from "../../assets/icons";
 import { motion } from "framer-motion";
 
 const Header: React.FC = () => {
-  //use state definitions for toggling mobile views
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  //toggle function for the mobile view
   const toggleMobileView = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsMobile(!isMobile);
   };
 
-  //framer motion variants
+  // Framer motion variants
   const variants = {
     visible: { opacity: 1 },
     hidden: { opacity: 0 },
@@ -29,90 +27,78 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-hoverColor-primary to-slate-100 overflow-hidden top-0">
-      {/*header for large screens*/}
+    <div className=" overflow-hidden top-0">
       <div className={`${headerStyles.globalHeaderPositioning}`}>
         <Link to="/">
           <img className="w-24 h-24" src={lawLogo} alt="company logo" />
         </Link>
 
-        {/*navs for the heading texts*/}
         <div className={`${headerStyles.navContainerPositioning}`}>
           {navData.map((nav) => (
-            <nav key={nav.heading}>
-              <Tooltip content={nav.title}>
-                <button>
-                  <Link to={nav.link}>
+            <nav key={nav.trigger}>
+              <button>
+                <HoverCard.Root>
+                  <HoverCard.Trigger>
                     <Button
                       variant="ghost"
-                      className={`${headerStyles.navTextStyles} cursor-pointer`}
+                      className="text-lg cursor-pointer text-slate-900"
                     >
-                      {nav.heading}
+                      {nav.trigger}
                     </Button>
-                  </Link>
-                </button>
-                {/*hover card section*/}
-              </Tooltip>
-            </nav>
-          ))}
-          {/*hover card section*/}
-          {/* <nav>
-            <div>
-              <HoverCard.Root>
-                <HoverCard.Trigger>
-                  <Button
-                    variant="ghost"
-                    className={`${headerStyles.navTextStyles} cursor-pointer`}
-                  >
-                    <Text>FORTUNA HUBS</Text>
-                  </Button>
-                </HoverCard.Trigger>
-                <HoverCard.Content>
-                  <motion.div
-                    className={`${headerStyles.hoverCardStyles} `}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "100%", opacity: 1 }}
-                    exit={{
-                      height: 0,
-                      opacity: 0,
-                      transition: { duration: 0.2, ease: "easeInOut" },
-                    }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                  >
-                    {hoverCardData.map((data) => (
-                      <Link to={data.link}>
-                        <Button
-                          key={data.heading}
-                          variant="ghost"
-                          className={`cursor-pointer ${headerStyles.navTextStyles}`}
+                  </HoverCard.Trigger>
+                  <HoverCard.Content className="bg-white rounded-lg shadow-lg p-4">
+                    {nav.content.map((content) => (
+                      <Link key={content.title} to={content.link}>
+                        <motion.div
+                          initial="hidden"
+                          animate="visible"
+                          exit="hidden"
+                          variants={variants}
+                          className="flex flex-col gap-2"
                         >
-                          {data.heading}
-                        </Button>
+                          <Text className="hover:text-blue-500 transition-colors duration-300">
+                            {content.title}
+                          </Text>
+                        </motion.div>
                       </Link>
                     ))}
-                  </motion.div>
-                </HoverCard.Content>
-              </HoverCard.Root>
-            </div>
-          </nav> */}
-          {/*search icon*/}
-          <button className="text-hoverColor-primary">
-            {icons.searchIcon}
-          </button>
+                  </HoverCard.Content>
+                </HoverCard.Root>
+              </button>
+            </nav>
+          ))}
+          <div className="relative flex items-center">
+            <Link to="">
+              <button
+                title="Know about us"
+                className="bg-transparent text-slate-900 text-md cursor-pointer text-lg"
+              >
+                About Us
+              </button>
+            </Link>
+          </div>
+          <div className="relative flex items-center">
+            <Link to="">
+              <Button
+                title="Know about us"
+                className="bg-transparent text-slate-900 text-md cursor-pointer text-lg"
+              >
+                Contact Us
+                <button>{icons.longRightArrow}</button>
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/*mobile view section*/}
+      {/* Mobile view section */}
       <div className={`${headerStyles.minScreenStyles}`}>
-        <div className={`${isMobile && "hidden"} `}>
+        <div className={`${isMobile && "hidden"}`}>
           <Link to="/">
             <img className="w-24 h-24" src={lawLogo} alt="company logo" />
           </Link>
         </div>
         <div className={`${headerStyles.minButtonStyles}`}>
-          <button className={`${headerStyles.navTextStyles}`}>
-            {icons.searchIcon}
-          </button>
           <button
             className={`${headerStyles.navTextStyles} transition-colors duration-300`}
             onClick={toggleMobileView}
@@ -139,7 +125,7 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/*mobile view content*/}
+        {/* Mobile view content */}
         <div className="flex items-center justify-between w-full">
           <div>
             {isMobile && (
@@ -155,84 +141,57 @@ const Header: React.FC = () => {
                   opacity: 0,
                   transition: { duration: 0.2, ease: "easeInOut" },
                 }}
-                variants={variants}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="bg-slate-500"
+                className="fixed top-0 left-0 w-full h-full bg-slate-800 flex flex-col items-center justify-center z-50" // Full-screen overlay
               >
-                <div className={`flex flex-col gap-3`}>
-                  {/*navs for the heading texts*/}
-
-                  <div
-                    className={`${headerStyles.mobileViewPositioning} gap-5 left-5 fixed top-2`}
+                <button
+                  onClick={toggleMobileView}
+                  className="absolute top-5 right-5 text-white"
+                >
+                  {/* Close button */}
+                  <motion.span
+                    initial="initial"
+                    animate={isMobile ? "enter" : "exit"}
+                    variants={iconVariants}
+                    className="text-red-500 text-2xl"
                   >
-                    {navData.map((nav) => (
-                      <nav key={nav.heading}>
-                        <Tooltip content={nav.title}>
-                          <button>
-                            <Link to={nav.link}>
-                              <Button
-                                variant="ghost"
-                                className={`hover:text-orange-900 transition-colors duration-300 text-white $ {headerStyles.navTextStyles} cursor-pointer`}
+                    {icons.crossIcon}
+                  </motion.span>
+                </button>
+                <div className="flex flex-col items-center gap-4 text-white text-lg">
+                  {navData.map((nav) => (
+                    <nav key={nav.trigger}>
+                      <HoverCard.Root>
+                        <HoverCard.Trigger>
+                          <Button
+                            variant="ghost"
+                            className="text-lg cursor-pointer text-white hover:bg-gray-700 transition-colors duration-300 p-2 rounded"
+                          >
+                            {nav.trigger}
+                          </Button>
+                        </HoverCard.Trigger>
+                        <HoverCard.Content className="bg-white rounded-lg shadow-lg p-4">
+                          {nav.content.map((content) => (
+                            <Link key={content.title} to={content.link}>
+                              <motion.div
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                variants={variants}
+                                className="flex flex-col gap-2"
                               >
-                                {nav.heading}
-                              </Button>
+                                <Text className="hover:text-blue-500 transition-colors duration-300">
+                                  {content.title}
+                                </Text>
+                              </motion.div>
                             </Link>
-                          </button>
-                          {/*hover card section*/}
-                        </Tooltip>
-                      </nav>
-                    ))}
-                    {/*hover card section*/}
-                    {/* <nav>
-                      <div>
-                        <HoverCard.Root>
-                          <HoverCard.Trigger>
-                            <Button
-                              variant="ghost"
-                              className={`${headerStyles.navTextStyles} cursor-pointer`}
-                            >
-                              <Text className="text-white hover:text-orange-900 transition-colors duration-300">
-                                FORTUNA HUBS
-                              </Text>
-                            </Button>
-                          </HoverCard.Trigger>
-                          <HoverCard.Content className="border-hoverColor-primary">
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={
-                                isMobile
-                                  ? { height: "100%", opacity: 1 }
-                                  : { height: 0, opacity: 0 }
-                              }
-                              exit={{
-                                height: 0,
-                                opacity: 0,
-                                transition: {
-                                  duration: 0.2,
-                                  ease: "easeInOut",
-                                },
-                              }}
-                              transition={{ duration: 0.5, ease: "easeInOut" }}
-                              variants={variants}
-                              className={`${headerStyles.hoverCardStyles}`}
-                            >
-                              {hoverCardData.map((data) => (
-                                <Link to={data.link} key={data.heading}>
-                                  <Button
-                                    variant="ghost"
-                                    className={`hover:text-orange-900 cursor-pointer ${headerStyles.navTextStyles}`}
-                                  >
-                                    {data.heading}
-                                  </Button>
-                                </Link>
-                              ))}
-                            </motion.div>
-                          </HoverCard.Content>
-                        </HoverCard.Root>
-                      </div>
-                    </nav> */}
-                    {/*search icon*/}
-                  </div>
+                          ))}
+                        </HoverCard.Content>
+                      </HoverCard.Root>
+                    </nav>
+                  ))}
+                  <Button className="bg-transparent hover:bg-gray-700 text-white transition-colors duration-300">
+                    About Us
+                  </Button>
                 </div>
               </motion.div>
             )}
@@ -245,7 +204,7 @@ const Header: React.FC = () => {
               <img
                 className={`${
                   isMobile ? "flex " : "hidden"
-                } w-96 h-96 rounded-full max-sm:hidden`}
+                } w-48 h-48 rounded-full max-sm:hidden`}
                 src={lawLogo}
                 alt="company logo"
               />
