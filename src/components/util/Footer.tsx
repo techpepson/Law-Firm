@@ -7,48 +7,75 @@ import { getYear } from "../../logic/getYear";
 
 const Footer: React.FC = () => {
   return (
-    <div className={`${footerStyles.footerGlobalContainer}`}>
-      {/*footer section*/}
+    <motion.div
+      className={`${footerStyles.footerGlobalContainer}`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      {/* Footer Section */}
       <footer>
-        {/*footer container*/}
-        <div
+        {/* Footer Container */}
+        <motion.div
           className={`${footerStyles.footerPositioning} w-full relative bottom-0 bg-gradient-to-r from-orange-200 to-slate-100`}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {footerData.map((footer) => (
-            <ul>
-              <li>
+          {/* Footer Links */}
+          <motion.ul
+            className="flex justify-center space-x-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          >
+            {footerData.map((footer, index) => (
+              <motion.li key={index} whileHover={{ scale: 1.1 }}>
                 <Link
                   className={`${headerStyles.navTextStyles}`}
                   to={footer.link}
                 >
                   {footer.title}
                 </Link>
-              </li>
-            </ul>
-          ))}
-          {/*footer images section*/}
-          <div className="flex gap-5 justify-center">
-            {mediaImages.map((image) => (
-              <Link to={image.link}>
+              </motion.li>
+            ))}
+          </motion.ul>
+
+          {/* Footer Images (Social Media Icons) */}
+          <motion.div
+            className="flex gap-5 justify-center mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          >
+            {mediaImages.map((image, index) => (
+              <Link key={index} to={image.link}>
                 <motion.div
                   whileHover={{
-                    opacity: 1, // Keep opacity or change as needed
+                    opacity: 1,
                     transition: { duration: 0.3, ease: "easeInOut" },
-                    scale: 0.8,
+                    scale: 1.1,
                   }}
+                  className="w-10 h-10 rounded-full overflow-hidden"
                 >
                   <img
                     src={image.image}
                     alt={image.title}
-                    className="w-10 h-10 rounded-full"
+                    className="w-full h-full object-cover"
                   />
                 </motion.div>
               </Link>
             ))}
-          </div>
-          {/*copyright section*/}
-          <div className="flex max-lg:flex-col gap-5 items-center">
-            <section className="flex gap-2">
+          </motion.div>
+
+          {/* Copyright Section */}
+          <motion.div
+            className="flex max-lg:flex-col gap-5 items-center mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <section className="flex gap-2 text-center">
               <div>
                 <span>&copy;</span>
                 <span>{getYear()}</span>
@@ -56,11 +83,11 @@ const Footer: React.FC = () => {
               <span>Fortuna Law</span>
               <span>All rights reserved.</span>
             </section>
-            <span>Developed by Payless</span>
-          </div>
-        </div>
+            <span className="text-sm">Developed by Payless</span>
+          </motion.div>
+        </motion.div>
       </footer>
-    </div>
+    </motion.div>
   );
 };
 

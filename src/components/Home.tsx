@@ -23,6 +23,7 @@ import {
   lawStatue,
   lawyer,
   legalMachine,
+  whiteCity,
 } from "../assets/images";
 import { Link } from "react-router-dom";
 import { InfiniteMovingCardsDemo } from "./util/InfiniteMovingCardsDemo";
@@ -85,6 +86,7 @@ const Home: React.FC = () => {
           name="description"
           content="The official home page of Fortuna Legal Services."
         />
+        <title>Home</title>
         <meta
           name="keywords"
           content="Fortuna, law, will drafting, attorney, lawyer, legal, lawyers"
@@ -116,7 +118,12 @@ const Home: React.FC = () => {
               />
             </div>
             {/*upper section texts*/}
-            <div className="flex flex-col relative ml-24 top-36 max-md:ml-5">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }} // Smooth animation
+              className="flex flex-col relative ml-24 top-36 max-md:ml-5"
+            >
               {homeTexts.map((text) => (
                 <div className="max-w-[75ch] text-wrap flex flex-col gap-5 justify-center">
                   <Heading className="leading-snug text-white text-5xl font-light antialiased font-spicy">
@@ -137,18 +144,18 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
         {/*section for the records*/}
         <section>
           {/*container for the records section*/}
           <Container>
-            <div className="flex justify-center items-center flex-col gap-5">
+            <motion.div className="flex justify-center items-center flex-col gap-5">
               {/*start year*/}
               <div>
                 <span className="font-bold text-5xl antialiased elsie-swash-caps-regular">
-                  Since 2007
+                  Since 2014
                 </span>
               </div>
               <div className="flex gap-10 max-md:grid max-md:grid-cols-2 max-sm:grid">
@@ -201,7 +208,7 @@ const Home: React.FC = () => {
                   </motion.div>
                 </Card>
               </div>
-            </div>
+            </motion.div>
           </Container>
         </section>
         {/*introduction section*/}
@@ -210,45 +217,41 @@ const Home: React.FC = () => {
           <div className="mid-section-styles">
             <Container>
               <div className="flex max-lg:flex-col gap-5 mt-14 relative w-full h-full">
-                <div className="flex flex-col gap-5">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="flex flex-col gap-5"
+                >
                   <p className="font-light">INTRODUCTION</p>
                   <Heading>
                     <span className=" text-4xl elsie-swash-caps-regular">
                       Trust & Estate Litigation Attorneys Serving All of
-                      Northern California
+                      Singapore
                     </span>
                   </Heading>
                   <p>
                     Fortuna&apos;s trust and estate attorneys represent
                     trustees, beneficiaries, and heirs throughout all of
-                    Northern California, including Danville, San Francisco,
-                    Pleasant Hill, Livermore, Pleasanton, Richmond, Berkeley,
-                    Oakland, and Walnut Creek, CA. For more than 20 years, our
+                    Singapore, including Marina Bay, Raffles Place, Newton,
+                    River Valley, Tampines, Pasir Ris, Bedok, Marine Parade,
+                    Oakland, and Walnut Creek, SG. For more than 8 years, our
                     Contra Costa county attorneys have tried, litigated,
                     mediated, and settled cases involving every type of dispute
                     concerning:
                   </p>
                   <ul className="list-disc pl-5">
                     <li>
-                      <span>fraud;</span>
+                      <span>Probate Issues</span>
                     </li>
                     <li>
-                      <span>breach of fiduciary duty;</span>
+                      <span>Succession Planning</span>
                     </li>
                     <li>
-                      <span>compelling trustees to account;</span>
+                      <span>Inheritance Issues</span>
                     </li>
                     <li>
-                      <span>trust and will contests;</span>
-                    </li>
-                    <li>
-                      <span>contested conservatorship;</span>
-                    </li>
-                    <li>
-                      <span>succession planning;</span>
-                    </li>
-                    <li>
-                      <span>securities and regulatory litigation.</span>
+                      <span>Trust and will Contests</span>
                     </li>
                   </ul>
                   <p>
@@ -263,9 +266,9 @@ const Home: React.FC = () => {
                       </Button>
                     </Link>
                   </motion.div>
-                </div>
+                </motion.div>
                 {/*side image for the section*/}
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full max-lg:hidden">
                   <motion.img
                     src={lawStatue}
                     alt="an image of a law statue"
@@ -309,7 +312,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* Text Content */}
-            <div className="z-10 h-full flex justify-center items-center flex-col gap-5">
+            <motion.div className="z-10 h-full flex justify-center items-center flex-col gap-5">
               {/* Ensures this div appears above the image */}
               <Heading className="text-white text-6xl">
                 <span className="elsie-swash-caps-regular italic">
@@ -317,13 +320,13 @@ const Home: React.FC = () => {
                 </span>
               </Heading>
               <p className="text-white text-3xl elsie-swash-caps-regular text-wrap">
-                We are proud to call Northern California our home, where we grew
-                up, attended school, and chose to raise our families. As your
+                We are proud to call Singapore our home, where we grew up,
+                attended school, and chose to raise our families. As your
                 trusted legal partners, we deeply value the attorney-client
                 relationship and hold your trust in our integrity and competence
                 in the highest regard.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -409,17 +412,20 @@ const Home: React.FC = () => {
                 muted
                 loop
                 controls={false}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full max-md:hidden flex"
               ></video>
             </div>
+            <div className=" w-full absolute h-full -z-[999]  overflow-hidden max-md:flex hidden">
+              <img src={whiteCity} className="object-cover w-full h-full" />
+            </div>
 
-            <div className="flex max-lg:flex-col justify-center gap-5 items-center h-full">
+            <div className="flex max-lg:flex-col justify-center gap-5 items-center h-full bg-black bg-opacity-25">
               <Heading className="max-w-[60ch] ">
-                <span className="elsie-swash-caps-regular text-6xl text-white flex items-center justify-center">
+                <span className="elsie-swash-caps-regular text-6xl  text-white flex items-center justify-center">
                   Request a Free Consultation With Fortuna Legal Services
                 </span>
               </Heading>
-              <p className="text-white text-xl">
+              <p className="text-white text-xl ">
                 We&apos;ll respond to your inquiry within 24 hours.
               </p>
               <Button className="cursor-pointer">
@@ -447,7 +453,7 @@ const Home: React.FC = () => {
                     <motion.img
                       src={staff.image}
                       alt={`An image of ${staff.name}`}
-                      className="w-full h-[24rem] object-cover object-top"
+                      className="w-[32rem] h-[32rem] object-right-top rounded-lg shadow-lg"
                       whileHover={{ scale: 1.05 }} // Scale up on hover
                     />
                     <div className="p-4">
@@ -538,7 +544,7 @@ const Home: React.FC = () => {
                     all aspects of the probate process in Northern California.
                   </li>
                   <li>
-                    Our Danville lawyers have handled hundreds of cases, from
+                    Our Singapore lawyers have handled hundreds of cases, from
                     estate planning to elder abuse to trust litigation cases
                     involving breach of fiduciary duty.
                   </li>
@@ -711,7 +717,7 @@ const Home: React.FC = () => {
           </div>
         </section>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

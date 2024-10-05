@@ -2,10 +2,12 @@ import { Container, Heading } from "@radix-ui/themes";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { lawDocs, lawStatue, lawWeigh, team } from "../assets/images";
+import { lawDocs, lawStatue, lawWeigh } from "../assets/images";
 import { TypewriterEffectSmoothDemo } from "./util/TypeWriterEffectDemo";
 import { aboutPageStyles } from "../styles/utilityStyles";
 import { Footer, Header } from "./component-exports";
+import { staffData } from "../data/homeData";
+import { Link } from "react-router-dom";
 
 const About: React.FC = () => {
   //animate number entrance
@@ -33,7 +35,7 @@ const About: React.FC = () => {
           content="Fortuna, law, will drafting, attorney, lawyer, legal"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Fortuna Home" />
+        <meta property="og:title" content="About Fortuna" />
         <meta
           property="og:description"
           content="The official about page of Fortuna Legal Services."
@@ -47,7 +49,7 @@ const About: React.FC = () => {
         <Header />
       </header>
       {/* Page Content */}
-      <div className="flex flex-col gap-5 bg-black bg-opacity-5 h-full">
+      <div className="flex flex-col gap-5 bg-black bg-opacity-25 h-full ">
         {/* Header Section */}
 
         <div className={`relative w-full h-full bg-opacity-55 bg-black`}>
@@ -70,7 +72,7 @@ const About: React.FC = () => {
             <div className="text-center mt-10 flex flex-col w-full h-full">
               {/* Display animated number */}
               <div>
-                <Heading className="text-3xl text-orange-500">Over</Heading>
+                <Heading className="text-3xl text-slate-100">Over</Heading>
               </div>
               <motion.div style={{ fontSize: "48px", fontWeight: "bold" }}>
                 <motion.span className="text-8xl text-orange-200">
@@ -79,7 +81,7 @@ const About: React.FC = () => {
               </motion.div>
               {/*text section container*/}
               <div>
-                <Heading className="text-xl text-orange-500">
+                <Heading className="text-xl text-slate-100">
                   Clients have shown satisfaction in our services
                 </Heading>
               </div>
@@ -101,7 +103,9 @@ const About: React.FC = () => {
               />
               {/*container for vision texts*/}
               <div className={`${aboutPageStyles.textStylesVariant}`}>
-                <Heading className={`${aboutPageStyles.headingStyles}`}>
+                <Heading
+                  className={`${aboutPageStyles.headingStyles} text-slate-700`}
+                >
                   Our Vision
                 </Heading>
                 <span>
@@ -164,19 +168,11 @@ const About: React.FC = () => {
             </div>
             {/*people section*/}
           </div>
-          <div
-            className={`${aboutPageStyles.textImageStyles} flex flex-col gap-5`}
-          >
-            <motion.img
-              whileHover={{ scale: 0.95 }}
-              src={team}
-              alt="an image of the fortuna team"
-              className={`rounded-lg`}
-            />
+          <section>
             <Container>
-              <div>
+              <div className="py-10">
                 <Heading className={`${aboutPageStyles.headingStyles}`}>
-                  Our Team
+                  <span>THE FORTUNA TEAM</span>
                 </Heading>
                 <span>
                   At Fortuna Legal Services, our team is the backbone of our
@@ -216,9 +212,32 @@ const About: React.FC = () => {
                   commitment to ethical practice and client service is the
                   foundation of our firm’s reputation.
                 </span>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {staffData.map((staff) => (
+                    <Link key={staff.name} to={staff.link}>
+                      <motion.div
+                        className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <motion.img
+                          src={staff.image}
+                          alt={`An image of ${staff.name}`}
+                          className="w-[32rem] h-[32rem] object-right-top rounded-lg shadow-lg"
+                          whileHover={{ scale: 1.05 }} // Scale up on hover
+                        />
+                        <div className="p-4">
+                          <p className="text-lg font-semibold">{staff.name}</p>
+                          <p className="text-gray-500">{staff.title}</p>
+                        </div>
+                      </motion.div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </Container>
-          </div>
+          </section>
         </section>
         {/*section for company story*/}
         <Container>

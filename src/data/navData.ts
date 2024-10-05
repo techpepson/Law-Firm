@@ -13,15 +13,15 @@ export const navData = [
     content: [
       {
         title: "Will Drafting & Review",
-        link: "",
+        link: "/practice-areas/will-draft",
       },
       {
         title: "Succession Planning",
-        link: "",
+        link: "/practice-areas/succession-planning",
       },
       {
         title: "Inheritance Disputes",
-        link: "",
+        link: "/practice-areas/inheritance-disputes",
       },
     ],
   },

@@ -20,8 +20,8 @@ export const aboutPageStyles = {
   textStyles: `text-md font-normal text-slate-300 text-justify`,
   textImageStyles: `flex gap-5 max-2xl:flex-col items-center gap-5`,
   textStylesVariant: `text-pretty`,
-  headingStyles: `text-orange-500`,
-  headingStylesVariant: `text-orange-700`,
+  headingStyles: `text-slate-700`,
+  headingStylesVariant: `text-slate-700`,
 };
 
 export const selectStyles = {

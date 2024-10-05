@@ -27,7 +27,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className=" overflow-hidden top-0">
+    <div className=" overflow-hidden top-0 bg-black">
       <div className={`${headerStyles.globalHeaderPositioning}`}>
         <Link to="/">
           <img className="w-24 h-24" src={lawLogo} alt="company logo" />
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                   <HoverCard.Trigger>
                     <Button
                       variant="ghost"
-                      className="text-lg cursor-pointer text-slate-900"
+                      className="text-lg cursor-pointer text-white"
                     >
                       {nav.trigger}
                     </Button>
@@ -67,26 +67,39 @@ const Header: React.FC = () => {
               </button>
             </nav>
           ))}
-          <div className="relative flex items-center">
-            <Link to="">
+          <motion.div
+            className="relative flex items-center"
+            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/about">
               <button
                 title="Know about us"
-                className="bg-transparent text-slate-900 text-md cursor-pointer text-lg"
+                className="bg-transparent text-white text-md cursor-pointer text-lg"
               >
                 About Us
               </button>
             </Link>
-          </div>
-          <div className="relative flex items-center">
-            <Link to="">
-              <Button
-                title="Know about us"
-                className="bg-transparent text-slate-900 text-md cursor-pointer text-lg"
-              >
-                Contact Us
-                <button>{icons.longRightArrow}</button>
+          </motion.div>
+          <div className="relative">
+            <motion.div
+              className="flex items-center"
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/contact">
+                <Button
+                  title="Know about us"
+                  className="bg-transparent text-white text-md cursor-pointer text-lg"
+                >
+                  Contact Us
+                  <button>{icons.longRightArrow}</button>
+                </Button>
+              </Link>
+              <Button className="bg-transparent text-white font-bold">
+                <span>CALL US: +233551875432</span>
               </Button>
-            </Link>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -105,7 +118,7 @@ const Header: React.FC = () => {
           >
             {isMobile ? (
               <motion.span
-                className="text-red-500"
+                className="text-white"
                 initial="initial"
                 animate={isMobile ? "exit" : "enter"}
                 variants={iconVariants}
@@ -117,7 +130,7 @@ const Header: React.FC = () => {
                 initial="initial"
                 animate={isMobile ? "exit" : "enter"}
                 variants={iconVariants}
-                className="text-red-500"
+                className="text-white"
               >
                 {icons.barsIcon}
               </motion.span>
@@ -189,8 +202,9 @@ const Header: React.FC = () => {
                       </HoverCard.Root>
                     </nav>
                   ))}
+
                   <Button className="bg-transparent hover:bg-gray-700 text-white transition-colors duration-300">
-                    About Us
+                    <Link to="/about">About Us</Link>
                   </Button>
                 </div>
               </motion.div>

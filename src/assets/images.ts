@@ -26,7 +26,22 @@ import legalMachine from "../images/webpLaw.webp";
 import lawHammer from "../images/law-hammer.webp";
 import whiteCity from "../images/whiteCity.webp";
 import lawyer from "../images/lawyer.webp";
+import laura from "../images/laura.jpg";
+import kelvin from "../images/kelvin.jpg";
+import jasmine from "../images/jasmine.jpg";
+import draftedWill from "../images/drafted-will.webp";
+import willDrafter from "../images/will-drafter.webp";
+import succession from "../images/succession.webp";
+import dispute from "../images/dispute.webp";
+
 export {
+  dispute,
+  succession,
+  willDrafter,
+  draftedWill,
+  jasmine,
+  kelvin,
+  laura,
   lawyer,
   whiteCity,
   lawHammer,
