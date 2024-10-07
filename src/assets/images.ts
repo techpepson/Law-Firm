@@ -35,8 +35,10 @@ import succession from "../images/succession.webp";
 import dispute from "../images/dispute.webp";
 import disclaimer from "../images/disclaimer.jpeg";
 import legalNoticeImage from "../images/legalNoticeImage.webp";
+import estateAdmin from "../images/estate-admin.jpeg";
 
 export {
+  estateAdmin,
   legalNoticeImage,
   disclaimer,
   dispute,

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Footer, Header } from "./component-exports";
 import { Helmet } from "react-helmet";
 import Consultation from "./util/Consultation";
+import { SuccessionPlanningTestimonial } from "./util/SuccessionPlanningTestimonial";
 
 const SuccessionPlanning: React.FC = () => {
   const location = useLocation();
@@ -53,7 +54,7 @@ const SuccessionPlanning: React.FC = () => {
         <Header />
         <section className="bg-gray-100 py-4 shadow-md">
           <motion.div
-            className="flex items-center justify-center"
+            className="flex items-center justify-center p-5"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -320,7 +321,7 @@ const SuccessionPlanning: React.FC = () => {
                 transition={{ duration: 0.5 }}
               >
                 <Heading>
-                  <span className="oleo-script-regular text-gray-800 text-3xl md:text-4xl">
+                  <span className="oleo-script-regular text-gray-800 text-2xl md:text-4xl">
                     EXPERT SUCCESSION PLANNING ATTORNEYS IN SINGAPORE
                   </span>
                 </Heading>
@@ -457,12 +458,12 @@ const SuccessionPlanning: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <Button className="flex cursor-pointer items-center bg-blue-600 text-white rounded-lg px-6 py-2 hover:bg-blue-700 transition duration-300">
-                  <span className="mr-2">
-                    Get Started with Your Succession Planning
-                  </span>
-                  <button>{icons.longRightArrow}</button>
-                </Button>
+                <Link to="/contact">
+                  <Button className="flex cursor-pointer items-center bg-blue-600 text-white rounded-lg px-6 py-2 hover:bg-blue-700 transition duration-300">
+                    <span className="mr-2">Contact Us Today</span>
+                    <button>{icons.longRightArrow}</button>
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
@@ -746,6 +747,9 @@ const SuccessionPlanning: React.FC = () => {
               ))}
             </div>
           </div>
+        </section>
+        <section>
+          <SuccessionPlanningTestimonial />
         </section>
         <section>
           <div className="py-10">

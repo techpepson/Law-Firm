@@ -31,7 +31,7 @@ export const navData = [
     content: [
       {
         title: "Estate Administration",
-        link: "",
+        link: "/practice-areas/estate-admin",
       },
       {
         title: "Trust Administration",

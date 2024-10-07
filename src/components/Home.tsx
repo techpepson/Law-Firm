@@ -1,7 +1,6 @@
 import { Button, Card, Container, Heading, Text } from "@radix-ui/themes";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import { useSelector } from "react-redux";
 import {
   homeTexts,
   servicesData,
@@ -23,12 +22,9 @@ import { homePageStyles } from "../styles/homePageStyles";
 import { icons } from "../assets/icons";
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
 import { Footer, Header } from "./component-exports";
-import { RootState } from "../store/config/store.config";
 import Consultation from "./util/Consultation";
 
 const Home: React.FC = () => {
-  //toggle mobile view
-  const { isMobile } = useSelector((store: RootState) => store.mobileView);
   //number animation values
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest) + "+");
@@ -98,11 +94,11 @@ const Home: React.FC = () => {
       </Helmet>
       {/*container for the home page */}
       <Header />
-      <div className={`overflow-hidden ${isMobile && "hidden"}`}>
+      <div className={`overflow-hidden`}>
         {/*section for the home page upper section*/}
         <section>
           {/*container for the upper section*/}
-          <div className={`relative h-[42rem]`}>
+          <div className={`relative h-[42rem] bg-black bg-opacity-50`}>
             {/*image to use for the background*/}
             <div className={`${homePageStyles.imageContainerStyles} h-full`}>
               <img
@@ -116,10 +112,10 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }} // Smooth animation
-              className="flex flex-col relative ml-24 top-36 max-md:ml-5"
+              className="flex flex-col relative top-36 "
             >
               {homeTexts.map((text) => (
-                <div className="max-w-[75ch] text-wrap flex flex-col gap-5 justify-center">
+                <div className="max-w-[75ch] text-wrap flex flex-col gap-5 justify-center p-5">
                   <Heading className="leading-snug text-white text-5xl font-light antialiased font-spicy">
                     {text.heading}
                   </Heading>
@@ -129,7 +125,7 @@ const Home: React.FC = () => {
                     </Text>
                   </div>
                   <div>
-                    <Link to="">
+                    <Link to="/contact">
                       <Button>
                         <span className="cursor-pointer">Get Assistance</span>
                         <button>{icons.longRightArrow}</button>
@@ -144,8 +140,8 @@ const Home: React.FC = () => {
         {/*section for the records*/}
         <section>
           {/*container for the records section*/}
-          <Container>
-            <motion.div className="flex justify-center items-center flex-col gap-5">
+          <Container className="bg-gradient-to-br from-slate-100 to-white mt-10 rounded-md bg-opacity-50">
+            <motion.div className="flex justify-center items-center flex-col gap-5 p-5">
               {/*start year*/}
               <div>
                 <span className="font-bold text-5xl antialiased elsie-swash-caps-regular">
@@ -215,7 +211,7 @@ const Home: React.FC = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="flex flex-col gap-5 bg-white bg-opacity-95 rounded-lg"
+                  className="flex flex-col gap-5 bg-white bg-opacity-95 rounded-lg p-5"
                 >
                   <p className="font-light">INTRODUCTION</p>
                   <Heading>
@@ -272,7 +268,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
             </Container>
-            <div className="flex justify-center mt-14">
+            <div className="flex justify-center mt-14 p-5">
               <Heading className="text-3xl ">
                 <span className="elsie-swash-caps-regular">Our Partners</span>
               </Heading>
@@ -306,14 +302,14 @@ const Home: React.FC = () => {
             </div>
 
             {/* Text Content */}
-            <motion.div className="z-10 h-full flex justify-center items-center flex-col gap-5">
+            <motion.div className="z-10 h-full flex justify-center items-center flex-col gap-5 p-5">
               {/* Ensures this div appears above the image */}
-              <Heading className="text-white text-6xl">
+              <Heading className="text-white text-6xl max-md:text-5xl">
                 <span className="elsie-swash-caps-regular italic">
                   WE ARE KNOWN
                 </span>
               </Heading>
-              <p className="text-white text-3xl elsie-swash-caps-regular text-wrap">
+              <p className="text-white text-3xl max-md:text-xl elsie-swash-caps-regular text-wrap">
                 We are proud to call Singapore our home, where we grew up,
                 attended school, and chose to raise our families. As your
                 trusted legal partners, we deeply value the attorney-client
@@ -336,7 +332,7 @@ const Home: React.FC = () => {
               />
             </div>
             <Container>
-              <div className="flex flex-col gap-5 mt-10">
+              <div className="flex flex-col gap-5 mt-10 p-5">
                 <Heading className="text-3xl font-light italic">
                   OUR SPECIALTIES
                 </Heading>
@@ -358,10 +354,10 @@ const Home: React.FC = () => {
                   </div>
                 </div>
                 {/*container for the images describing our services*/}
-                <div className="grid grid-cols-2 max-md:flex max-md:flex-col max-md:gap-10 gap-5">
+                <div className="grid grid-cols-2 max-md:flex max-md:flex-col max-md:gap-10 gap-5 bg-black bg-opacity-50">
                   {servicesData.map((service) => (
                     <Link to={service.link}>
-                      <div className="h-auto">
+                      <div className="h-auto flex flex-col gap-10">
                         <motion.img
                           src={service.image}
                           alt={`an image of ${service.title}`}
@@ -401,7 +397,7 @@ const Home: React.FC = () => {
 
         {/*section for free consultation*/}
         <section>
-          <div className="relative h-[42rem]">
+          <div className="relative h-[42rem] bg-black bg-opacity-25 mt-10">
             <div className=" w-full absolute h-full -z-[999]  overflow-hidden">
               <video
                 src={cityVid}
@@ -416,9 +412,9 @@ const Home: React.FC = () => {
               <img src={whiteCity} className="object-cover w-full h-full" />
             </div>
 
-            <div className="flex max-lg:flex-col justify-center gap-5 items-center h-full bg-black bg-opacity-25">
+            <div className="flex max-lg:flex-col justify-center gap-5 items-center h-full p-5">
               <Heading className="max-w-[60ch] ">
-                <span className="elsie-swash-caps-regular text-6xl  text-white flex items-center justify-center">
+                <span className="elsie-swash-caps-regular max-md:text-4xl text-6xl  text-white flex items-center justify-center">
                   Request a Free Consultation With Fortuna Legal Services
                 </span>
               </Heading>
@@ -469,7 +465,7 @@ const Home: React.FC = () => {
         {/*why choose us section*/}
         <section>
           {/*container for why choose us*/}
-          <div className="py-10 bg-slate-400 bg-opacity-20 border-r border-solid rounded-br-full max-lg:rounded-br-3xl">
+          <div className="py-10 bg-slate-400 bg-opacity-20 border-r border-solid rounded-br-full max-lg:rounded-br-3xl flex flex-col m-5 gap-5 rounded-md">
             <Heading className=" text-4xl mb-4">
               <span className="elsie-swash-caps-regular">Overview</span>
             </Heading>

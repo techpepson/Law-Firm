@@ -25,12 +25,12 @@ const WillContest: React.FC = () => {
           @import
           url('https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&family=Spicy+Rice&display=swap');
         </style>
-        <title>Home</title>
+        <title>Will draft</title>
         <meta
           name="description"
           content="The official will draft and review page of Fortuna Legal Services."
         />
-        <title>Will Draft</title>
+
         <meta
           name="keywords"
           content="Fortuna, draft, law, will drafting, attorney, lawyer, legal, lawyers"
@@ -301,7 +301,7 @@ const WillContest: React.FC = () => {
           <Container>
             <section>
               <div className="m-5 flex flex-col gap-5">
-                <Heading className="flex h-full items-center text-white text-6xl max-md:text-5xl ">
+                <Heading className="flex h-full items-center text-white text-6xl max-md:text-4xl ">
                   <span className="oleo-script-regular text-white">
                     Get Effective Representation for Drafting or Reviewing a
                     Will in Raffles Place.
@@ -313,10 +313,12 @@ const WillContest: React.FC = () => {
                   reviewing a will. Schedule an initial consultation today!
                 </p>
                 <div>
-                  <Button className="cursor-pointer">
-                    <span>Proceed To Will Drafting Consultation Form</span>
-                    <button>{icons.longRightArrow}</button>
-                  </Button>
+                  <Link to="/contact">
+                    <Button className="cursor-pointer">
+                      <span>Reach Out</span>
+                      <button>{icons.longRightArrow}</button>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </section>
@@ -565,7 +567,7 @@ const WillContest: React.FC = () => {
         {/*team section */}
         <section>
           <div className="py-10">
-            <Heading className="text-START text-4xl mb-8">
+            <Heading className="text-START max-md:text-2xl text-4xl mb-8">
               <span className="oleo-script-regular">
                 WE ARE READY TO HELP YOU
               </span>

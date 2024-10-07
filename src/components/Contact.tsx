@@ -1,12 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as Form from "@radix-ui/react-form";
 import { motion } from "framer-motion";
 import { Footer, Header } from "./component-exports";
 import "../App.css";
 import { icons } from "../assets/icons";
 import { Helmet } from "react-helmet";
+import { useSelector, useDispatch } from "react-redux";
+import { AppDispatch, RootState } from "../store/config/store.config";
+import {
+  updateEmail,
+  updateName,
+  updateMessage,
+} from "../store/email/contact.slice";
+import { ContactPayload } from "../types/email.types";
+import { contactThunk } from "../store/email/contact.reducer";
+import { toast } from "react-toastify";
 
 const ContactUs: React.FC = () => {
+  const { name, email, responseMessage, message, loading } = useSelector(
+    (store: RootState) => store.contact
+  );
+
+  //dispatch function
+  const dispatch = useDispatch<AppDispatch>();
+
+  //update functions
+  const updateNameFunction = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    dispatch(updateName(e.target.value));
+  };
+
+  //email update function
+  const updateEmailFunction = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    dispatch(updateEmail(e.target.value));
+  };
+  const updateMessageFunction = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
+    dispatch(updateMessage(e.target.value));
+  };
+
+  //contact payload
+  const contactPayload: ContactPayload = {
+    name,
+    email,
+    message,
+  };
+
+  //toast function
+  useEffect(() => {
+    if (responseMessage) {
+      toast(responseMessage);
+    }
+  }, [responseMessage]);
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    dispatch(contactThunk(contactPayload));
+  };
   return (
     <>
       <Helmet>
@@ -59,7 +109,10 @@ const ContactUs: React.FC = () => {
               </Form.Label>
               <Form.Control asChild>
                 <motion.input
-                  className="border border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                  onChange={updateNameFunction}
+                  value={name}
+                  name="name"
+                  className="border text-white border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   type="text"
                   placeholder="Your Name"
                   initial={{ scale: 0.8, opacity: 0 }}
@@ -82,7 +135,10 @@ const ContactUs: React.FC = () => {
               </Form.Label>
               <Form.Control asChild>
                 <motion.input
-                  className="border border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                  onChange={updateEmailFunction}
+                  value={email}
+                  name="email"
+                  className="border text-white border-gray-300 px-4 py-2 rounded-md outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   type="email"
                   placeholder="Your Email"
                   initial={{ scale: 0.8, opacity: 0 }}
@@ -105,7 +161,10 @@ const ContactUs: React.FC = () => {
               </Form.Label>
               <Form.Control asChild>
                 <motion.textarea
-                  className="border border-gray-300 px-4 py-2 rounded-md h-32 outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                  onChange={updateMessageFunction}
+                  value={message}
+                  name="message"
+                  className="border text-white border-gray-300 px-4 py-2 rounded-md h-32 outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                   placeholder="Your Message"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -117,12 +176,19 @@ const ContactUs: React.FC = () => {
 
           <Form.Submit asChild type="button">
             <motion.button
-              className="bg-indigo-600 text-white px-6 py-3 rounded-lg w-full text-lg font-semibold hover:bg-indigo-700 transition-all"
+              onClick={handleSubmit}
+              className={` `}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              Send Message
+              {loading ? (
+                <span className="loading loading-bars text-blue-900"></span>
+              ) : (
+                <button className="text-white px-6 py-3 rounded-lg font-semibold transition-all bg-blue-500">
+                  Send Message
+                </button>
+              )}
             </motion.button>
           </Form.Submit>
         </Form.Root>
@@ -139,7 +205,7 @@ const ContactUs: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <button className="p-2 bg-indigo-600 text-white rounded-full">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
               {icons.locationIcon}
             </button>
             <p className="text-gray-800 font-semibold">
@@ -154,7 +220,7 @@ const ContactUs: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
           >
-            <button className="p-2 bg-indigo-600 text-white rounded-full">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
               {icons.phoneIcon}
             </button>
             <p className="text-gray-800 font-semibold">+233123456789</p>
@@ -165,7 +231,7 @@ const ContactUs: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.7 }}
           >
-            <button className="p-2 bg-indigo-600 text-white rounded-full">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
               {icons.email}
             </button>
             <p className="text-gray-800 font-semibold">
@@ -180,7 +246,7 @@ const ContactUs: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <button className="p-2 bg-indigo-600 text-white rounded-full">
+            <button className="p-2 bg-blue-600 text-white rounded-full">
               {icons.officeIcon}
             </button>
             <p className="text-gray-800 font-semibold">

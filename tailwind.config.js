@@ -1,3 +1,5 @@
+import daisyui from "daisyui";
+
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 const colors = require("tailwindcss/colors");
@@ -13,7 +15,7 @@ module.exports = {
     // rest of the code
     extend: {
       fontFamily: {
-        spicy: ['"Spicy Rice"', 'cursive']
+        spicy: ['"Spicy Rice"', "cursive"],
       },
       animation: {
         scroll:
@@ -33,7 +35,7 @@ module.exports = {
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors, daisyui],
 };
 
 function addVariablesForColors({ addBase, theme }) {

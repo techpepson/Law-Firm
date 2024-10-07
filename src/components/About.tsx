@@ -101,7 +101,7 @@ const About: React.FC = () => {
                 className="rounded-xl"
               />
               {/*container for vision texts*/}
-              <div className={`${aboutPageStyles.textStylesVariant}`}>
+              <div className={`${aboutPageStyles.textStylesVariant} p-5`}>
                 <Heading
                   className={`${aboutPageStyles.headingStyles} text-slate-700`}
                 >
@@ -139,7 +139,7 @@ const About: React.FC = () => {
                 className={` rounded-xl`}
               />
               {/*mission texts container*/}
-              <div className={`${aboutPageStyles.textStylesVariant}`}>
+              <div className={`${aboutPageStyles.textStylesVariant} p-5`}>
                 <Heading className={`${aboutPageStyles.headingStyles}`}>
                   Our Mission
                 </Heading>
@@ -169,9 +169,9 @@ const About: React.FC = () => {
           </div>
           <section>
             <Container>
-              <div className="py-10">
+              <div className="py-10 p-5">
                 <Heading className={`${aboutPageStyles.headingStyles}`}>
-                  <span>THE FORTUNA TEAM</span>
+                  <span className="oleo-script-regular">THE FORTUNA TEAM</span>
                 </Heading>
                 <span>
                   At Fortuna Legal Services, our team is the backbone of our
@@ -240,9 +240,9 @@ const About: React.FC = () => {
         </section>
         {/*section for company story*/}
         <Container>
-          <div>
+          <div className="p-5">
             <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-              The <span>Fortuna</span> Story
+              <span className="oleo-script-regular">The Fortuna Story</span>
             </Heading>
             <div>
               Fortuna Legal Services was born out of a shared vision among a
@@ -256,9 +256,9 @@ const About: React.FC = () => {
               empowerment at the heart of everything we do.
             </div>
             {/*fortuna beginnings*/}
-            <div>
+            <div className="mt-5">
               <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-                Our Beginnings
+                <span className="oleo-script-regular">Our Beginnings</span>
               </Heading>
               <span>
                 Founded by a small team of legal professionals with diverse
@@ -274,9 +274,11 @@ const About: React.FC = () => {
               </span>
             </div>
             {/*growth section*/}
-            <div>
+            <div className="mt-5">
               <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-                Growth and Expansion
+                <span className="oleo-script-regular">
+                  Growth and Expansion
+                </span>
               </Heading>
               <span>
                 As Fortuna grew, so did our team and our capabilities. We
@@ -297,9 +299,11 @@ const About: React.FC = () => {
               </span>
             </div>
             {/*approach*/}
-            <div>
+            <div className="mt-5">
               <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-                A client-Centered Approach
+                <span className="oleo-script-regular">
+                  A client-Centered Approach
+                </span>
               </Heading>
               <span>
                 At Fortuna, we believe that every client’s case is unique and
@@ -318,9 +322,9 @@ const About: React.FC = () => {
               </span>
             </div>
             {/*legacy*/}
-            <div>
+            <div className="mt-5">
               <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-                Building A Legacy
+                <span className="oleo-script-regular">Building A Legacy</span>
               </Heading>
               <span>
                 Our journey has been one of consistent growth and evolution,
@@ -336,9 +340,9 @@ const About: React.FC = () => {
               </span>
             </div>
             {/*promise*/}
-            <div>
+            <div className="mt-5">
               <Heading className={`${aboutPageStyles.headingStylesVariant}`}>
-                Our Promise
+                <span className="oleo-script-regular">Our Promise</span>
               </Heading>
               <span>
                 At Fortuna Legal Services, we are committed to delivering legal

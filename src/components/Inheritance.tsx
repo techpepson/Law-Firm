@@ -54,7 +54,7 @@ const Inheritance: React.FC = () => {
         />
       </Helmet>
       {/*container for the will drafting page*/}
-      <div className="bg-gradient-to-br from-slate-100 to-slate-200 bg-opacity-15">
+      <div className="bg-gradient-to-br from-slate-100 to-slate-200 bg-opacity-15 overflow-hidden">
         <Header />
         {/*container for the upper section of will drafting page*/}
         <section>

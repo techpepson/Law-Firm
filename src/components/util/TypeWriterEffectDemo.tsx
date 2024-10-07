@@ -36,7 +36,7 @@ export function TypewriterEffectSmoothDemo() {
     },
   ];
   return (
-    <div className="flex flex-col items-center justify-center   ">
+    <div className="flex flex-col items-center justify-center p-5">
       <TypewriterEffectSmooth words={words} />
       <span
         className={`${aboutPageStyles.textStyles} text-[20px] max-md:text-[17px]`}

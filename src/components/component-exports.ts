@@ -11,8 +11,12 @@ import StaffDetail from "./StaffDetail";
 import Contact from "./Contact";
 import Disclaimer from "./Disclaimer";
 import LegalNotice from "./LegalNotice";
+import Consultation from "./util/Consultation";
+import EstateAdmin from "./EstateAdmin";
 
 export {
+  EstateAdmin,
+  Consultation,
   LegalNotice,
   Contact,
   Disclaimer,
