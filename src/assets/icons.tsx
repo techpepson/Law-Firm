@@ -24,7 +24,7 @@ export const icons = {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-6"
+      className="size-7"
     >
       <path
         strokeLinecap="round"
@@ -40,7 +40,7 @@ export const icons = {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-6"
+      className="size-7"
     >
       <path
         strokeLinecap="round"

@@ -5,9 +5,9 @@ export const headerStyles = {
   navContainerPositioning: `flex gap-5`,
   navTextStyles: `transform transition-colors duration-300 hover:text-hoverColor-primary antialiased`,
   hoverCardStyles: `flex flex-col gap-5`,
-  minScreenStyles: `max-lg:flex hidden relative items-center`,
+  minScreenStyles: `max-lg:flex hidden relative items-center flex justify-center`,
   minButtonStyles: `flex right-10 absolute top-10 gap-5`,
-  mobileViewPositioning: `flex flex-col relative`,
+  mobileViewPositioning: `flex flex-col relative gap-10 justify-center items-center`,
 };
 
 export const footerStyles = {

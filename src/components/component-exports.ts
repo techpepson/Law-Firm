@@ -9,9 +9,13 @@ import SuccessionPlanning from "./SuccessionPlanning";
 import Inheritance from "./Inheritance";
 import StaffDetail from "./StaffDetail";
 import Contact from "./Contact";
+import Disclaimer from "./Disclaimer";
+import LegalNotice from "./LegalNotice";
 
 export {
+  LegalNotice,
   Contact,
+  Disclaimer,
   StaffDetail,
   Home,
   WillContest,

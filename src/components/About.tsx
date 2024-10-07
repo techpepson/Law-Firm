@@ -8,6 +8,7 @@ import { aboutPageStyles } from "../styles/utilityStyles";
 import { Footer, Header } from "./component-exports";
 import { staffData } from "../data/homeData";
 import { Link } from "react-router-dom";
+import Consultation from "./util/Consultation";
 
 const About: React.FC = () => {
   //animate number entrance
@@ -45,11 +46,9 @@ const About: React.FC = () => {
       </Helmet>
 
       {/*header*/}
-      <header>
-        <Header />
-      </header>
+      <Header />
       {/* Page Content */}
-      <div className="flex flex-col gap-5 bg-black bg-opacity-25 h-full ">
+      <div className="flex flex-col gap-5 bg-white bg-opacity-25 h-full ">
         {/* Header Section */}
 
         <div className={`relative w-full h-full bg-opacity-55 bg-black`}>
@@ -357,6 +356,49 @@ const About: React.FC = () => {
               </span>
             </div>
           </div>
+          <section>
+            <div className="py-10">
+              <div className="text-center mb-8">
+                <Heading className="text-4xl mb-4">
+                  <span className="elsie-swash-caps-regular">Reach Us</span>
+                </Heading>
+                <Heading className="text-2xl">
+                  <span className="elsie-swash-caps-regular">
+                    Schedule a Consultation With Fortuna Legal Services
+                  </span>
+                </Heading>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Unordered list data */}
+                <motion.div
+                  className="bg-white p-6 rounded-lg shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <ul className="list-disc list-inside space-y-2 text-gray-800 mb-4">
+                    <li>We have three attorneys to assist you</li>
+                    <li>
+                      We will return your initial call or email inquiry within
+                      one hour
+                    </li>
+                  </ul>
+                  {/* Disclaimer section */}
+                  <div className="text-center">
+                    <Link
+                      to="/disclaimer"
+                      className="text-blue-500 hover:underline"
+                    >
+                      <p>Disclaimer</p>
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Form field to book consultation */}
+                <Consultation />
+              </div>
+            </div>
+          </section>
         </Container>
       </div>
       <footer>

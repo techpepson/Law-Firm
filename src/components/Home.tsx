@@ -1,15 +1,7 @@
-import {
-  Button,
-  Card,
-  Container,
-  Heading,
-  Select,
-  Text,
-  TextArea,
-  TextField,
-} from "@radix-ui/themes";
+import { Button, Card, Container, Heading, Text } from "@radix-ui/themes";
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useSelector } from "react-redux";
 import {
   homeTexts,
   servicesData,
@@ -31,8 +23,12 @@ import { homePageStyles } from "../styles/homePageStyles";
 import { icons } from "../assets/icons";
 import { animate, useMotionValue, useTransform, motion } from "framer-motion";
 import { Footer, Header } from "./component-exports";
+import { RootState } from "../store/config/store.config";
+import Consultation from "./util/Consultation";
 
 const Home: React.FC = () => {
+  //toggle mobile view
+  const { isMobile } = useSelector((store: RootState) => store.mobileView);
   //number animation values
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest) + "+");
@@ -101,14 +97,12 @@ const Home: React.FC = () => {
         <meta property="og:url" content="https://fortuna-legal.com/" />
       </Helmet>
       {/*container for the home page */}
-      <div>
+      <Header />
+      <div className={`overflow-hidden ${isMobile && "hidden"}`}>
         {/*section for the home page upper section*/}
         <section>
           {/*container for the upper section*/}
           <div className={`relative h-[42rem]`}>
-            <div className="absolute w-full">
-              <Header />
-            </div>
             {/*image to use for the background*/}
             <div className={`${homePageStyles.imageContainerStyles} h-full`}>
               <img
@@ -221,7 +215,7 @@ const Home: React.FC = () => {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="flex flex-col gap-5"
+                  className="flex flex-col gap-5 bg-white bg-opacity-95 rounded-lg"
                 >
                   <p className="font-light">INTRODUCTION</p>
                   <Heading>
@@ -259,7 +253,7 @@ const Home: React.FC = () => {
                     near you, Fortuna is always available at your doorstep.
                   </p>
                   <motion.div whileHover={{ scale: 0.98 }}>
-                    <Link to="">
+                    <Link to="/contact">
                       <Button className="cursor-pointer">
                         <Text>Contact Us</Text>
                         <button>{icons.longRightArrow}</button>
@@ -268,7 +262,7 @@ const Home: React.FC = () => {
                   </motion.div>
                 </motion.div>
                 {/*side image for the section*/}
-                <div className="relative w-full h-full max-lg:hidden">
+                <div className="relative w-full h-full max-lg:hidden z-[999]">
                   <motion.img
                     src={lawStatue}
                     alt="an image of a law statue"
@@ -362,10 +356,6 @@ const Home: React.FC = () => {
                       needs.
                     </p>
                   </div>
-                  <Button className="cursor-pointer">
-                    <Text>View All</Text>
-                    {icons.longRightArrow}
-                  </Button>
                 </div>
                 {/*container for the images describing our services*/}
                 <div className="grid grid-cols-2 max-md:flex max-md:flex-col max-md:gap-10 gap-5">
@@ -390,9 +380,16 @@ const Home: React.FC = () => {
                             opacity: 0.9, // Slight reverse rotation on tap/click
                           }}
                         />
-                        <span className="text-xl font-spicy text-white shadow-lg">
-                          {service.title}
-                        </span>
+                        <div className="flex gap-5 flex-col">
+                          <span className="text-xl font-spicy text-white shadow-lg">
+                            {service.title}
+                          </span>
+                          <Link to={service.link}>
+                            <Button className="cursor-pointer hover:bg-orange-200 transition-all duration-150">
+                              <span className="font-spicy">Read More</span>
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
                     </Link>
                   ))}
@@ -440,7 +437,9 @@ const Home: React.FC = () => {
         <section>
           {/*container for team section*/}
           <div className="py-10">
-            <Heading className="text-center text-4xl mb-8">Our Team</Heading>
+            <Heading className="text-center text-4xl mb-8">
+              <span className="oleo-script-regular">Our Team</span>
+            </Heading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {staffData.map((staff) => (
                 <Link key={staff.name} to={staff.link}>
@@ -630,94 +629,12 @@ const Home: React.FC = () => {
               </motion.div>
 
               {/* Form field to book consultation */}
-              <motion.div
-                className="bg-white p-6 rounded-lg shadow-md"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <form action="">
-                  {/* Name text field */}
-                  <div className="mb-4">
-                    <Text as="label" className="block mb-1">
-                      Name*
-                    </Text>
-                    <TextField.Root
-                      type="text"
-                      placeholder="Enter your name"
-                      className="w-full p-2 border rounded-md"
-                    />
-                  </div>
-                  {/* Phone text field */}
-                  <div className="mb-4">
-                    <Text as="label" className="block mb-1">
-                      Phone*
-                    </Text>
-                    <TextField.Root
-                      placeholder="Enter phone number"
-                      type="text"
-                      className="w-full p-2 border rounded-md"
-                    />
-                  </div>
-                  {/* Email text field */}
-                  <div className="mb-4">
-                    <Text as="label" className="block mb-1">
-                      Email**
-                    </Text>
-                    <TextField.Root
-                      type="email"
-                      placeholder="Enter Email"
-                      className="w-full p-2 border rounded-md"
-                    />
-                  </div>
-                  {/* Select section */}
-                  <div className="mb-4">
-                    <Text as="label" className="block mb-1">
-                      Practice Area*
-                    </Text>
-                    <Select.Root value="estate-admin">
-                      <Select.Trigger className="p-2 w-full" />
-                      <Select.Content>
-                        <Select.Item value="estate-admin">
-                          Estate Administration
-                        </Select.Item>
-                        <Select.Item value="trust-admin">
-                          Trust Administration
-                        </Select.Item>
-                        <Select.Item value="will-drafting">
-                          Will Drafting & Review
-                        </Select.Item>
-                        <Select.Item value="inheritance-disputes">
-                          Inheritance Disputes
-                        </Select.Item>
-                        <Select.Item value="succession-planning">
-                          Succession Planning
-                        </Select.Item>
-                      </Select.Content>
-                    </Select.Root>
-                    {/* Text area section */}
-                    <div className="mb-4">
-                      <Text as="label" className="block mb-1">
-                        Case Description
-                      </Text>
-                      <TextArea
-                        placeholder="Enter case description"
-                        className="w-full p-2 border rounded-md"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <Button className="w-full">
-                      Get Your Free Consultation
-                    </Button>
-                  </div>
-                </form>
-              </motion.div>
+              <Consultation />
             </div>
           </div>
         </section>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

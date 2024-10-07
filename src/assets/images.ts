@@ -33,8 +33,12 @@ import draftedWill from "../images/drafted-will.webp";
 import willDrafter from "../images/will-drafter.webp";
 import succession from "../images/succession.webp";
 import dispute from "../images/dispute.webp";
+import disclaimer from "../images/disclaimer.jpeg";
+import legalNoticeImage from "../images/legalNoticeImage.webp";
 
 export {
+  legalNoticeImage,
+  disclaimer,
   dispute,
   succession,
   willDrafter,

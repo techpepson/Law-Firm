@@ -8,7 +8,10 @@ import {
   Inheritance,
   StaffDetail,
   Contact,
+  Disclaimer,
+  LegalNotice,
 } from "./components/component-exports";
+
 import "@radix-ui/themes/styles.css";
 
 const App: React.FC = () => {
@@ -24,6 +27,8 @@ const App: React.FC = () => {
         <Route path="/attorney/:id" element={<StaffDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/notice" element={<LegalNotice />} />
       </Routes>
     </>
   );

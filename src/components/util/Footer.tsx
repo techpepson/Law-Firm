@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <footer>
         {/* Footer Container */}
         <motion.div
-          className={`${footerStyles.footerPositioning} w-full relative bottom-0 bg-gradient-to-r from-orange-200 to-slate-100`}
+          className={`${footerStyles.footerPositioning} w-full relative bottom-0 bg-gradient-to-r from-slate-200 to-slate-200`}
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
