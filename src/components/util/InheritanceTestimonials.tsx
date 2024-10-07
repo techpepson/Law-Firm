@@ -34,31 +34,33 @@ export function InheritanceTestimonials() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Dealing with an inheritance dispute can feel like living through the best of times and the worst of times. Fortuna Legal Services brought wisdom where there was confusion and belief where there was doubt. They were the light in what felt like a season of darkness, guiding me through the complexities of my case with clarity and expertise.",
+    name: "Charles D.",
+    title: "Client in a Contentious Inheritance Case",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "To contest or not to contest, that was the question. I faced the slings and arrows of a family dispute over inheritance, but Fortuna Legal Services stood by me through it all. They helped me take a stand and fight for my rightful share, offering not only legal expertise but also emotional support during such a trying time.",
+    name: "William S.",
+    title: "Client in a Will Contest",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "What seemed straightforward turned out to be a dream within a dream—an inheritance battle that revealed hidden complexities. Fortuna Legal Services uncovered the truth and ensured I wasn’t left with an illusion of fairness but a real resolution. Their attention to detail made all the difference.",
+    name: "Edgar P.",
+    title: "Client in a Disputed Trust Case",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "It is a truth universally acknowledged that when significant wealth is at stake, disputes can arise. Fortuna Legal Services provided invaluable counsel in resolving a complicated inheritance matter, ensuring that my family's future remained secure and fair. Their guidance was indispensable.",
+    name: "Jane A.",
+    title: "Client in a Family Estate Dispute",
+  },
+  {
+    quote:
+      "I felt adrift in a sea of legal issues after my family’s inheritance became a matter of contention. Fortuna Legal Services navigated the storm, taking control of a complex situation that felt overwhelming to me. They gave me direction, clarity, and ultimately a fair resolution in the face of uncertainty.",
+    name: "Herman M.",
+    title: "Client in a Cross-Jurisdictional Inheritance Case",
   },
 ];
+

@@ -212,19 +212,6 @@ const ContactUs: React.FC = () => {
               50 Raffles Place L19 & L30, Singapore, 048623
             </p>
           </motion.div>
-
-          {/* Phone */}
-          <motion.div
-            className="flex items-center space-x-4"
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
-          >
-            <button className="p-2 bg-blue-600 text-white rounded-full">
-              {icons.phoneIcon}
-            </button>
-            <p className="text-gray-800 font-semibold">+233123456789</p>
-          </motion.div>
           <motion.div
             className="flex items-center space-x-4"
             initial={{ x: -20, opacity: 0 }}
@@ -235,7 +222,7 @@ const ContactUs: React.FC = () => {
               {icons.email}
             </button>
             <p className="text-gray-800 font-semibold">
-              fortuna-legal@gmail.com
+              legalaffair@fortuna-legal.com
             </p>
           </motion.div>
 

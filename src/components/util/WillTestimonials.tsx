@@ -35,31 +35,32 @@ export function WillTestimonials() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Drafting a will can feel like the best of times and the worst of times—filled with hope for the future but also challenging decisions. Fortuna Legal Services brought clarity, wisdom, and peace of mind to the process. Their thorough review ensured that my wishes were perfectly aligned with the law, turning what could have been a confusing experience into one of certainty and security.",
+    name: "Charles D.",
+    title: "Client for Will Drafting",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "To draft or not to draft—that was the question. I was overwhelmed by the prospect of getting my affairs in order, but Fortuna Legal Services made the process seamless. Their expertise helped me address every detail, ensuring that my family will be protected when the time comes. I couldn’t have made a better choice.",
+    name: "William S.",
+    title: "Client for Will Review and Amendment",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "When it comes to wills, what we see or seem can be complicated. Fortuna Legal Services turned my vision into reality, offering detailed advice to ensure my estate plan covered every possibility. Their careful drafting made sure my legacy was secure, turning a once vague dream into a solid plan for the future.",
+    name: "Edgar P.",
+    title: "Client for Estate Will Preparation",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "It is a truth universally acknowledged that anyone in possession of a fortune needs a well-drafted will. Fortuna Legal Services helped me create a thorough and legally sound document, ensuring that my loved ones will be cared for as I intend. Their expertise was absolutely invaluable.",
+    name: "Jane A.",
+    title: "Client for High-Net-Worth Will Drafting",
+  },
+  {
+    quote:
+      "I had no clear path for how to set up my will, but Fortuna Legal Services guided me through every step. Their in-depth knowledge of estate planning laws ensured that my final wishes were expertly documented and that my family would be protected when the time comes. I couldn’t have asked for better service.",
+    name: "Herman M.",
+    title: "Client for Comprehensive Will Review",
   },
 ];

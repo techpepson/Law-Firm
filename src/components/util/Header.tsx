@@ -101,10 +101,7 @@ const Header: React.FC = () => {
                   Contact Us
                   <button>{icons.longRightArrow}</button>
                 </Button>
-              </Link>
-              <Button className="bg-transparent text-white font-bold">
-                <span>CALL US: +233551875432</span>
-              </Button>
+              </Link>{" "}
             </motion.div>
           </div>
         </div>
@@ -197,9 +194,6 @@ const Header: React.FC = () => {
                       <button>{icons.longRightArrow}</button>
                     </Button>
                   </Link>
-                  <Button className="bg-transparent text-white font-bold">
-                    <span>CALL US: +233551875432</span>
-                  </Button>
                 </motion.div>
               </div>
             </div>

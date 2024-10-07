@@ -20,7 +20,6 @@ const StaffDetail: React.FC = () => {
     placeOfBirth,
     university,
     program,
-    phone,
     email,
     firstMemberShip,
     secondMembership,
@@ -50,7 +49,10 @@ const StaffDetail: React.FC = () => {
           property="og:image"
           content={`https://fortuna-legal.com/attorney/${id}`}
         />
-        <meta property="og:url" content={`https://fortuna-legal.com/attorney/${id}`} />
+        <meta
+          property="og:url"
+          content={`https://fortuna-legal.com/attorney/${id}`}
+        />
       </Helmet>
       <div className="container mx-auto py-10 px-5">
         <Header />
@@ -99,9 +101,6 @@ const StaffDetail: React.FC = () => {
               </li>
               <li>
                 <strong>Program:</strong> {program}
-              </li>
-              <li>
-                <strong>Phone:</strong> {phone}
               </li>
               <li>
                 <strong>Email:</strong> {email}

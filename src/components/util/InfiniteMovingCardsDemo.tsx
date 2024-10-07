@@ -34,31 +34,32 @@ export function InfiniteMovingCardsDemo() {
 const testimonials = [
   {
     quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
+      "Navigating through the most challenging times in my life, I turned to Fortuna Legal Services. They provided wisdom when I felt lost, hope when all seemed bleak, and clarity amidst confusion. Their expertise turned my despair into relief and ensured my rights were protected at every step.",
+    name: "Charles D.",
+    title: "Client in a Complex Civil Litigation Case",
   },
   {
     quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
+      "When faced with an overwhelming legal challenge, I asked myself if I should endure the struggle alone or seek professional help. Choosing Fortuna Legal Services was the best decision I made. They took on my case with unwavering commitment, fighting every legal battle on my behalf. Their dedication gave me peace of mind.",
+    name: "William S.",
+    title: "Client in a Personal Injury Case",
   },
   {
     quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
+      "In times when everything felt uncertain, Fortuna Legal Services reminded me that not everything is as it seems. Their thorough approach and attention to detail ensured that no aspect of my case was overlooked, allowing me to rest easy knowing I was in good hands.",
+    name: "Edgar P.",
+    title: "Client in a Business Dispute",
   },
   {
     quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
+      "It is a truth universally acknowledged that when you are in possession of significant assets, you need the best legal counsel. Fortuna Legal Services provided me with exceptional advice on estate planning and financial protection, ensuring my future was secure.",
+    name: "Jane A.",
+    title: "Client in an Estate Planning Case",
+  },
+  {
+    quote:
+      "When I had little hope left and faced turbulent legal challenges, Fortuna Legal Services stepped in. They navigated the complexities of my case with precision and ensured that my interests were protected throughout. I couldn’t have asked for a more dedicated legal team.",
+    name: "Herman M.",
+    title: "Client in a Maritime Law Case",
   },
 ];
