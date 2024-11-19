@@ -83,7 +83,6 @@ const Footer: React.FC = () => {
               <span>Fortuna Law</span>
               <span>All rights reserved.</span>
             </section>
-            <span className="text-sm">Developed by Payless</span>
           </motion.div>
         </motion.div>
       </footer>
