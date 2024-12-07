@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion"; // Import framer motion for animations
 import { staffData } from "../data/homeData";
 import { Footer, Header } from "./component-exports";
@@ -103,7 +103,10 @@ const StaffDetail: React.FC = () => {
                 <strong>Program:</strong> {program}
               </li>
               <li>
-                <strong>Email:</strong> {email}
+                <strong>
+                  <Link to={`mailto:${email}`}>Email</Link>:
+                </strong>{" "}
+                {email}
               </li>
             </ul>
 
@@ -118,7 +121,7 @@ const StaffDetail: React.FC = () => {
             <ul className="list-disc list-inside text-gray-700">
               <li>{firstMemberShip}</li>
               <li>{secondMembership}</li>
-              <li>{thirdMembership}</li>
+              {thirdMembership && <li>{thirdMembership}</li>}
             </ul>
           </motion.div>
         </motion.div>

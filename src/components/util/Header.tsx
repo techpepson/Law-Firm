@@ -1,5 +1,5 @@
 import React from "react";
-import { lawLogo } from "../../assets/images";
+import { fortunaLogo } from "../../assets/images";
 import { navData } from "../../data/navData";
 import { Button, HoverCard, Text } from "@radix-ui/themes";
 import { headerStyles } from "../../styles/utilityStyles";
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         transition={{ type: "spring", stiffness: 300 }} // Smooth animation
       >
         <Link to="/">
-          <img className="w-24 h-24" src={lawLogo} alt="company logo" />
+          <img className="w-44 h-24" src={fortunaLogo} alt="company logo" />
         </Link>
 
         <div className={`${headerStyles.navContainerPositioning}`}>

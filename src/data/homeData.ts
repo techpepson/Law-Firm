@@ -151,10 +151,9 @@ export const staffData = [
     placeOfBirth: "Memphis, Tennessee",
     university: "University of Tennessee, Chattanooga",
     program: "Bachelor of Science, Criminal Justice",
-    email: "jasmine@gmail.com",
+    email: "jazminehealth@fortuna-legal.com",
     firstMemberShip: "The State Bar of Memphis",
-    secondMembership: "Contra Costa County Bar Association",
-    thirdMembership: "Estate Planning Council of Memphis.",
+    secondMembership: "Inter-Pacific Bar Association",
   },
 
   {
@@ -165,13 +164,13 @@ export const staffData = [
     link: "/attorney/kelvin-cox",
     heading: `Kelvin Cox, a dedicated attorney with a compelling background. `,
     description:
-      "  Growing up in Philadelphia's blue-collar environment, Kelvin was influenced by his father's role in the publishing industry and his aunt's work in social security and welfare. Kelvin enrolled in law school and contributed to the Fair Housing Clinic, where he represented clients who could not afford housing. His commitment to helping those in need earned him a 7-11 certification, which facilitated his work with indigent clients on various issues, including lost wages and public housing matters.After completing law school, Kelvin practiced as a transactional attorney, gaining valuable experience in real estate, corporate, and probate law. He currently applies that expertise to assist clients with Workers’ Compensation, Real Estate, and other legal issues at Fortuna. His advocacy focuses on supporting clients facing foreclosure and unemployment, striving to provide them with the representation they deserve.",
+      "Growing up in Philadelphia's blue-collar environment, Kelvin was influenced by his father's role in the publishing industry and his aunt's work in social security and welfare. Kelvin enrolled in law school and contributed to the Fair Housing Clinic, where he represented clients who could not afford housing. His commitment to helping those in need earned him a 7-11 certification, which facilitated his work with indigent clients on various issues, including lost wages and public housing matters.After completing law school, Kelvin practiced as a transactional attorney, gaining valuable experience in real estate, corporate, and probate law. He currently applies that expertise to assist clients with Workers’ Compensation, Real Estate, and other legal issues at Fortuna. His advocacy focuses on supporting clients facing foreclosure and unemployment, striving to provide them with the representation they deserve.",
     placeOfBirth: "Philadelphia",
     university: "Philadelphia Law School",
     program: "Bachelor of Science, Law",
-    email: "kelvin@gmail.com",
-    firstMemberShip: "The State Bar of Memphis",
-    secondMembership: "Contra Costa County Bar Association",
+    email: " kevincox@fortuna-legal.com",
+    firstMemberShip: "Hawaii State Bar Association ",
+    secondMembership: "State Bar of Georgia",
     thirdMembership: "Estate Planning Council of Raffles Place",
   },
   {
@@ -182,13 +181,14 @@ export const staffData = [
     link: "/attorney/laura-arthur",
     heading: `I represents clients in federal and state trial and appellate courts nationwide. `,
     description:
-      "I represent clients in federal and state trial and appellate courts nationwide. In addition, i have represented clients in arbitrations, mediation, and other alternative dispute resolution proceedings.I have litigated and tried cases involving breach of fiduciary duty, breach of contract, fraud, bankruptcy, privacy, employment, and intellectual property matters. I also have experience in First Amendment law. I have litigated and tried business disputes before judges, juries, and arbitrators all over the Europe, North America and Asia. Those experiences have prepared me for handling any courtroom challenge I encounter. My experience, attention to detail, and high energy will be brought to bear on my client’s problems. My clients have looked to me for advice over the decades because they trust me. If you need advice and guidance with a legal problem, I’m here to help.",
-    placeOfBirth: "Memphis, Tennessee",
-    university: "University of Tennessee, Chattanooga",
-    program: "Bachelor of Science, Criminal Justice",
-    email: "jasmine@gmail.com",
-    firstMemberShip: "The State Bar of Singapore",
-    secondMembership: "Contra Costa County Bar Association",
-    thirdMembership: "Estate Planning Council of Raffles Place",
+      "Laura Arthur was born and raised in Sydney, and pursued her education at The University of Sydney Law School. Laura Arthur represent clients in federal and state trial and appellate courts nationwide. In addition, she have represented clients in arbitrations, mediation, and other alternative dispute resolution proceedings. Laura have litigated and tried cases involving breach of fiduciary duty, breach of contract, fraud, bankruptcy, privacy, employment, and intellectual property matters. Laura  also have experience in First Amendment law. She have litigated and tried business disputes before judges, juries, and arbitrators all over the Europe, North America and Asia. Those experiences have prepared Laura  for handling any courtroom challenge she encounter. Laura experience, attention to detail, and high energy will be brought to bear on my client’s problems. My clients have looked to me for advice over the decades because they trust me. If you need advice and guidance with a legal problem, I’m here to help.",
+    placeOfBirth: "Sydney ",
+    university: "The University of Sydney Law School ",
+    program:
+      "International Law, Asian and Pacific Law, Corporate Law, Jurisprudence",
+    email: " arthurlaurau@fortuna-legal.com",
+    firstMemberShip: "International Bar Association (IBA)",
+    secondMembership: "Federal Bar Association (FBA)",
+    thirdMembership: "Women's Bar Association",
   },
 ];

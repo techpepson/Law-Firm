@@ -36,8 +36,10 @@ import dispute from "../images/dispute.webp";
 import disclaimer from "../images/disclaimer.jpeg";
 import legalNoticeImage from "../images/legalNoticeImage.webp";
 import estateAdmin from "../images/estate-admin.jpeg";
+import fortunaLogo from "./fortuna-logo.jpg";
 
 export {
+  fortunaLogo,
   estateAdmin,
   legalNoticeImage,
   disclaimer,
